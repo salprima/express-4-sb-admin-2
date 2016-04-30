@@ -18,6 +18,7 @@
     "morgan": "~1.6.1",
     "morris.js": "^0.5.0",
     "raphael": "^2.2.0",
+    "requirejs": "^2.2.0",
     "serve-favicon": "~2.3.0"
   }
 }
