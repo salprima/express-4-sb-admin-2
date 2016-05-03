@@ -87,10 +87,178 @@ define ('handleSidebarToggler', [], function () {
 });
 
 
-require(['jquery', 'bootstrap', 'raphael', 'morris', 'isIE', 'handleSidebarToggler'/*'datatables',*/],
-function($, bootstrap, Raphael, Morris, isIE, handleSidebarToggler/*datatables,*/ ){
+define ('reNumberPages', [], function (tabTitle) {
+		return function(tabTitle){
+			pageNum = 1;
+			var tabCount = $('#pageTab > li').length;
+			$('#pageTab > li').each(function() {
+					var pageId = $(this).children('a').attr('href');
+					if (pageId == "#page1") {
+							return true;
+					}
+					pageNum++;
+					$(this).children('a').html(tabTitle+
+							'<button class="close" type="button" ' +
+							'title="Remove this page">×</button>');
+			});
+		};
+});
+
+define ('loadTabContent', [], function () {
+	return function(pageName){
+		alert(pageName);
+	};
+});
+
+require(['jquery', 'bootstrap', 'raphael', 'morris', 'isIE', 'handleSidebarToggler','reNumberPages','loadTabContent'/*'datatables',*/],
+function($, bootstrap, Raphael, Morris, isIE, handleSidebarToggler,reNumberPages,loadTabContent/*datatables,*/ ){
 
 window.Raphael = Raphael;
+var pageNum = 1;
+
+/**
+* Add Tab
+*/
+$("a[name='loadTabContent']").click(function(e){
+	e.preventDefault();
+
+		var self = $(this).context;
+		var tabId = $(this).attr('data-id');
+		var tabTitle = $(this).attr('title');
+		var tabSrc = "/"+$(this).attr('data-src');
+		//pageNum++;
+
+		/* check tab existence */
+		var tabExist;
+		$('#pageTab li').each(function(i, el){
+			if($(this).children().attr('id') == tabId){
+				tabExist = 1;
+			}
+		});
+		if(tabExist) return;
+
+		/* append tab */
+		$('#pageTab').append(
+			$('<li>'+
+				'<a id="'+tabId+'" href="#pageTabContent-'+ tabId +'">'+
+						tabTitle + '<button class="close" type="button" title="Remove this page">×</button>' +
+				'</a>'+
+			'</li>')
+		);
+
+
+		$('#pageTabContent').append(
+			$('<div class="tab-pane" id="pageTabContent-'+ tabId +'"></div>')
+		);
+
+		$('#'+tabId).trigger('click');
+		$("#pageTabContent-"+tabId).html('<object style="width: 100%; height: 800px;" data="/'+tabId+'"></object>')
+
+
+
+		/* load tab content */
+		/*
+		$.get({
+			url: tabSrc
+		}).done(function(res){
+				$('#pageTabContent').append(
+					$('<div class="tab-pane" id="pageTabContent-'+ tabId +'"></div>')
+				);
+				$("#pageTabContent-"+tabId).html(res)
+				$('#'+tabId).trigger('click');
+		});
+*/
+
+
+});
+
+
+/**
+* Remove a Tab
+*/
+$('#pageTab').on('click', ' li a .close', function() {
+
+	/*
+	var tabTitle = $(this).parents('li')[0].innerText;
+			tabTitle = tabTitle.substr(0,tabTitle.length-2);
+		*/
+
+	var tabActiveId;
+	$('#pageTab li').each(function(i, el){
+		if($(this).hasClass('active')){
+			tabActiveId = $(this).children().attr('id');
+		}
+	});
+
+	var prevTabId = $(this).parents('li').prev().children().attr('id');
+	var tabId = $(this).parents('li').children().attr('id');
+	var pageTabContentId = "pageTabContent-"+tabId;
+
+	$(this).parents('li').remove('li');
+	$("#"+pageTabContentId).remove();
+
+if($(this).parents('li').hasClass('active')){
+	//open previous tab
+	$("#"+prevTabId).trigger('click');
+}else{
+	//find active tab and open
+	$("#"+tabActiveId).trigger('click');
+}
+
+	//reNumberPages(tabTitle);
+
+	//$("#dashboard").trigger('click');
+		/*
+		var tabId = $(this).parents('li').children('a').attr('href');
+		$(this).parents('li').remove('li');
+		$(tabId).remove();
+		reNumberPages(tabTitle);
+		$('#pageTab a:first').tab('show');
+		*/
+
+});
+
+
+
+
+/**
+ * Add a Tab
+ */
+$('#btnAddPage').click(function() {
+
+	$('#pageTab li').each(function(i, el){
+		console.info($(this).children().attr(''));
+	});
+
+
+	/*
+	pageNum++;
+	$('#pageTab').append(
+		$('<li><a href="#page' + pageNum + '">' +
+		'Page ' + pageNum +
+		'<button class="close" type="button" ' +
+		'title="Remove this page">×</button>' +
+		'</a></li>'));
+
+	$('#pageTabContent').append(
+		$('<div class="tab-pane" id="page' + pageNum +
+		'">Content page' + pageNum + '</div>'));
+
+	$('#page' + pageNum).tab('show');
+	*/
+});
+
+
+
+
+/**
+ * Click Tab to show its content
+ */
+$("#pageTab").on("click", "a", function(e) {
+e.preventDefault();
+$(this).tab('show');
+});
+
 
 //side menu toggle (init)
 if (isIE() <= 9) {
