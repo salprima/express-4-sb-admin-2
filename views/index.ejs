@@ -15,7 +15,7 @@
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/lib/metismenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!--link href="/lib/metismenu/dist/metisMenu.min.css" rel="stylesheet"-->
 
     <!-- Timeline CSS -->
     <link href="/static/stylesheets/timeline.css" rel="stylesheet">
@@ -36,6 +36,19 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+	.nav-tabs > li .close {
+    margin: -3px 0 0 10px;
+    font-size: 18px;
+    padding: 5px 0;
+    float: right;
+}
+
+.nav-tabs > li a[data-toggle=tab] {
+    float: left!important;
+}
+	</style>
+
 </head>
 
 <body>
@@ -47,10 +60,11 @@
             <div class="navbar-header">
 
               <a class="navbar-brand" href="/">SB Admin v2.0</a>
-              
+
               <%- include('topRightMenu') %>
-              </div><!-- /.navbar-header -->
-            </div><!-- /.navbar-static-side -->
+
+            </div><!-- /.navbar-header -->
+            <!--/div--><!-- /.navbar-static-side -->
 
 
 
@@ -58,10 +72,19 @@
         </nav>
       </header>
 
-      <div id="wrapper">
+      <div id="wrapper" style="height: 100%;">
         <%- include('sidebarLeftMenu') %><!-- sidebar left -->
-        <div id="page-wrapper">
-          <%- include('indexContent') %>
+
+        <div id="page-wrapper" style="height: 100%;">
+          <%- include('tabContent') %>
+
+
+          <div id="pageTabContent" class="tab-content" style="padding-top: 50px; width: 100%;">
+          		<div class="tab-pane" id="pageTabContent-dashboard"> <%- include('indexContent') %> </div>
+          </div>
+
+
+
         </div><!-- /#page-wrapper -->
       </div><!-- /#wrapper -->
 

@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav role="navigation" style="margin-bottom: 0; margin-top: -1px;">
+<nav role="navigation" class="navbar-fixed-top" style="margin-top: 50px;">
 
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse" id="sidebar-area">
@@ -19,7 +19,10 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> <span class="side-menu-title">Dashboard</span></a>
+                    <a href="#" name="loadTabContent" data-id="dashboard" data-src="dashboard" title="Dashboard">
+                      <i class="fa fa-dashboard fa-fw"></i>
+                      <span class="side-menu-title">Dashboard</span>
+                    </a>
                 </li>
                 <li>
                     <a href="#" class="dropdown-collapse"><i class="fa fa-bar-chart-o fa-fw"></i> <span class="side-menu-title">Charts</span><span class="fa arrow"></span></a>
@@ -34,31 +37,31 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-table fa-fw"></i> <span class="side-menu-title">Tables</span></a>
+                    <a href="#" name="loadTabContent" data-id="tables" data-src="tables" title="Tables"><i class="fa fa-table fa-fw"></i> <span class="side-menu-title">Tables</span></a>
                 </li>
                 <li>
-                    <a href="forms.html"><i class="fa fa-edit fa-fw"></i> <span class="side-menu-title">Forms</span></a>
+                    <a href="#" name="loadTabContent" data-id="forms" data-src="forms" title="Forms"><i class="fa fa-edit fa-fw"></i> <span class="side-menu-title">Forms</span></a>
                 </li>
                 <li>
                     <a href="#" class="dropdown-collapse"><i class="fa fa-wrench fa-fw"></i> <span class="side-menu-title">UI Elements</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="panels-wells.html">Panels and Wells</a>
+                            <a href="#" name="loadTabContent" data-id="panels-wells" data-src="panels-wells" title="Panels and Wells">Panels and Wells</a>
                         </li>
                         <li>
-                            <a href="buttons.html">Buttons</a>
+                            <a href="#" name="loadTabContent" data-id="buttons" data-src="buttons" title="Buttons">Buttons</a>
                         </li>
                         <li>
-                            <a href="notifications.html">Notifications</a>
+                            <a href="#" name="loadTabContent" data-id="notifications" data-src="notifications" title="Notifications">Notifications</a>
                         </li>
                         <li>
-                            <a href="typography.html">Typography</a>
+                            <a href="#" name="loadTabContent" data-id="typography" data-src="typography" title="Typography">Typography</a>
                         </li>
                         <li>
-                            <a href="icons.html"> Icons</a>
+                            <a href="#" name="loadTabContent" data-id="icons" data-src="icons" title="Icons"> Icons</a>
                         </li>
                         <li>
-                            <a href="grid.html">Grid</a>
+                            <a href="#" name="loadTabContent" data-id="grid" data-src="grid" title="Grid">Grid</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -106,15 +109,18 @@
                     <!-- /.nav-second-level -->
                 </li>
             </ul>
+
+            <div class="menu-toggler sidebar-toggler fa fa-exchange fa-fw navbar-right" style="padding-right: 20px;">
+                <!--span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span!-->
+            </div>
+
         </div>
         <!-- /.sidebar-collapse -->
 
-        <div class="menu-toggler sidebar-toggler fa fa-exchange fa-fw navbar-right" style="padding-right: 20px;">
-            <!--span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span!-->
-        </div>
+
 
     </div>
     <!-- /.navbar-static-side -->
