@@ -3,7 +3,9 @@ Express 4 SB Admin 2
 When Express 4 meet SB Admin 2. Simple dashboard template using ExpressJS and SB Admin 2.
 
 ## Features
-* collapsible sidebar
+* collapsible sidebar menu
+* tabbed pane for each sidebar menu
+* [DataTables](https://datatables.net) ready
 
 ## Credits
 * [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2)
@@ -14,6 +16,6 @@ When Express 4 meet SB Admin 2. Simple dashboard template using ExpressJS and SB
 
 ## Contact
 #### Sal Prima
-* Homepage: dprimax.tumblr.com
+* Homepage: N/A
 * e-mail: dprima10[at]gmail[dot]com
 * Twitter: [@dprimax](https://twitter.com/dprimax "dprimax on twitter")
