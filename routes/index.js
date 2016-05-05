@@ -1,9 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-/* Dashboard */
+/* Home page / index */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+});
+
+/* Charts */
+router.get('/flot', function(req, res, next) {
+  res.render('flot', { title: 'Flot' });
+});
+router.get('/morris', function(req, res, next) {
+  res.render('morris', { title: 'Morris' });
+});
+
+/* Dashboard */
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboard', { title: 'Dashboard' });
 });
 
 /*Tables*/
@@ -34,6 +47,14 @@ router.get('/icons', function(req, res, next) {
 });
 router.get('/grid', function(req, res, next) {
   res.render('grid', { title: 'Grid' });
+});
+
+/*Sample Pages*/
+router.get('/blank', function(req, res, next) {
+  res.render('blank', { title: 'Blank Page' });
+});
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Login' });
 });
 
 

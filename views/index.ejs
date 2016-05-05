@@ -15,7 +15,7 @@
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <!--link href="/lib/metismenu/dist/metisMenu.min.css" rel="stylesheet"-->
+    <link href="/lib/metismenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
     <link href="/static/stylesheets/timeline.css" rel="stylesheet">
@@ -36,18 +36,18 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-	.nav-tabs > li .close {
+<style>
+  .nav-tabs > li .close {
     margin: -3px 0 0 10px;
     font-size: 18px;
     padding: 5px 0;
     float: right;
-}
+  }
 
-.nav-tabs > li a[data-toggle=tab] {
+  .nav-tabs > li a[data-toggle=tab] {
     float: left!important;
-}
-	</style>
+  }
+</style>
 
 </head>
 
@@ -80,9 +80,10 @@
 
 
           <div id="pageTabContent" class="tab-content" style="padding-top: 50px; width: 100%;">
-          		<div class="tab-pane" id="pageTabContent-dashboard"> <%- include('indexContent') %> </div>
+          		<div class="tab-pane active" id="pageTabContent-dashboard">
+                 <object style="width: 100%; height: 800px;" data="/dashboard"></object>
+              </div>
           </div>
-
 
 
         </div><!-- /#page-wrapper -->

@@ -1,7 +1,21 @@
-<div style="padding-top: 5px; position: fixed; z-index: 999; background-color: #ffffff; width: 100%;">
-
-<!--a href="#" id="btnAddPage" role="button">Add Page</a-->
-<ul id="pageTab" class="nav nav-tabs">
-		<li class="active"><a id="dashboard" href="#pageTabContent-dashboard" data-toggle="tab">Dashboard</a></li>
+<style type="text/css">
+	.nav-tabs {
+	    overflow-x: auto;
+	    overflow-y: hidden;
+	    display: -webkit-box;
+	    display: -moz-box;
+	}
+	.nav-tabs>li {
+	      float:none;
+	}
+	.list-inline {
+	  white-space:nowrap;
+	}
+</style>
+<div style="padding-top: 5px; position: fixed; z-index: 999; background-color: #ffffff; width: auto;">
+<ul id="pageTab" class="nav nav-tabs list-inline">
+		<li class="active">
+				<a id="dashboard" href="#pageTabContent-dashboard" data-toggle="tab">Dashboard</a>
+		</li>
 </ul>
 </div>
