@@ -14,6 +14,7 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "flot-charts": "^0.8.3",
     "font-awesome": "^4.6.1",
     "jquery": "^2.2.3",
     "metismenu": "^2.5.0",
