@@ -17,7 +17,7 @@ $ git clone https://github.com/dprimax/express-4-sb-admin-2.git
 thats it! after clone complete you can go to the "express-4-sb-admin-2" directory and then run the server with:
 ### Windows
 ```sh
-> debugWin.bat
+> debugWIN.bat
 ```
 ### Mac OS
 ```sh
@@ -25,7 +25,9 @@ $ . debugOSX.sh
 ```
 
 if anything goes well, then access to:
+```sh
 http://localhost:3000
+```
 
 
 ## Credits
