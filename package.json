@@ -12,7 +12,7 @@
     "datatables.net": "^1.10.11",
     "datatables.net-bs": "^1.10.11",
     "debug": "~2.2.0",
-    "ejs": "~2.3.3",
+    "ejs": "~2.5.5",
     "express": "~4.13.1",
     "flot-charts": "^0.8.3",
     "font-awesome": "^4.6.1",
