@@ -16,7 +16,7 @@
     "express": "~4.13.1",
     "flot-charts": "^0.8.3",
     "font-awesome": "^4.6.1",
-    "jquery": "^2.2.3",
+    "jquery": "~3.0.0",
     "metismenu": "^2.5.0",
     "morgan": "~1.6.1",
     "morris.js": "^0.5.0",
